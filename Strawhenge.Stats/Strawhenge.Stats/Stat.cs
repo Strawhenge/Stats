@@ -4,6 +4,8 @@ namespace Strawhenge.Stats
 {
     public class Stat
     {
+        int _value;
+
         public Stat()
         {
         }
@@ -16,18 +18,30 @@ namespace Strawhenge.Stats
 
         public int Max { get; private set; }
 
-        public int Value { get; private set; }
+        public int Value => Math.Min(_value + Buff, Max);
+
+        public int Buff { get; private set; }
 
         public void Set(int value)
         {
-            Value = Math.Min(
+            _value = Math.Min(
                 Math.Max(value, 0), Max);
         }
 
         public void SexMax(int max)
         {
             Max = Math.Max(max, 0);
-            Value = Math.Min(Value, Max);
+            _value = Math.Min(Value, Max);
+        }
+
+        public void AddBuff(int buff)
+        {
+            Buff += buff;
+        }
+
+        public void RemoveBuff(int buff)
+        {
+            Buff -= buff;
         }
     }
 }
