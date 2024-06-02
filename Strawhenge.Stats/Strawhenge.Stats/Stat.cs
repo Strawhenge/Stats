@@ -16,6 +16,8 @@ namespace Strawhenge.Stats
             Set(value);
         }
 
+        public event Action Changed;
+
         public int Max { get; private set; }
 
         public int Value => Math.Min(_value + Buff, Max);
@@ -26,22 +28,26 @@ namespace Strawhenge.Stats
         {
             _value = Math.Min(
                 Math.Max(value, 0), Max);
+            Changed?.Invoke();
         }
 
         public void SexMax(int max)
         {
             Max = Math.Max(max, 0);
             _value = Math.Min(Value, Max);
+            Changed?.Invoke();
         }
 
         public void AddBuff(int buff)
         {
             Buff += buff;
+            Changed?.Invoke();
         }
 
         public void RemoveBuff(int buff)
         {
             Buff -= buff;
+            Changed?.Invoke();
         }
     }
 }
