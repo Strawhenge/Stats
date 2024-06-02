@@ -24,6 +24,10 @@ namespace Strawhenge.Stats
 
         public int Buff { get; private set; }
 
+        public bool IsEmpty => Value == 0;
+
+        public bool IsFull => Value == Max;
+
         public void Set(int value)
         {
             BaseValue = Math.Min(
