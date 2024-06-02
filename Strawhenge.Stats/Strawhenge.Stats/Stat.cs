@@ -10,8 +10,8 @@ namespace Strawhenge.Stats
 
         public Stat(int max, int value = 0)
         {
-            Max = max;
-            Value = value;
+            SexMax(max);
+            Set(value);
         }
 
         public int Max { get; private set; }
