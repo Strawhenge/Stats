@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Strawhenge.Stats.Unity.Tests
 {
-    public static class AssertMaybe
+    static class AssertMaybe
     {
         public static T HasSome<T>(Maybe<T> maybe)
         {

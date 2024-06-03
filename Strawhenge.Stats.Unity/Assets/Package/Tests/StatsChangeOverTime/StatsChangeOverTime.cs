@@ -19,10 +19,10 @@ namespace Strawhenge.Stats.Unity.Tests
 
             yield return new WaitForEndOfFrame();
             
-            var health = AssertMaybe.HasSome(statContainer.FindStat("Health"));
+            var health = AssertMaybe.HasSome(statContainer.FindStat(StatNames.Health));
             var lastHealth = health.Value;
             
-            var energy = AssertMaybe.HasSome(statContainer.FindStat("Energy"));
+            var energy = AssertMaybe.HasSome(statContainer.FindStat(StatNames.Energy));
             var lastEnergy = energy.Value;
             
             yield return new WaitForSeconds(10);

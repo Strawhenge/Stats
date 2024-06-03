@@ -21,8 +21,8 @@ namespace Strawhenge.Stats.Unity.Tests
 
             Assert.AreEqual(2, statContainer.Stats.Count);
 
-            statContainer.VerifyStat("Health", 50, 100);
-            statContainer.VerifyStat("Energy", 100, 100);
+            statContainer.VerifyStat(StatNames.Health, 50, 100);
+            statContainer.VerifyStat(StatNames.Energy, 100, 100);
         }
 
         [UnitySetUp]
