@@ -1,0 +1,9 @@
+{
+  "name": "com.strawhenge.stats",
+  "version": "1.0.0",
+  "displayName": "Strawhenge Stats",
+  "unity": "2020.3",
+  "author": {
+    "name": "Matt Bristow"
+  }
+}
