@@ -4,11 +4,13 @@ namespace Strawhenge.Stats.Tests
 {
     public class StatBuffTests
     {
+        const string StatName = "Energy";
+
         [Fact]
         public void Buff_should_increase_value_until_removed()
         {
             const int initialValue = 50;
-            var stat = new Stat(max: 100, value: initialValue);
+            var stat = new Stat(StatName, max: 100, value: initialValue);
 
             const int buff = 20;
 
@@ -24,7 +26,7 @@ namespace Strawhenge.Stats.Tests
         {
             const int max = 100;
             const int initialValue = 50;
-            var stat = new Stat(max, value: initialValue);
+            var stat = new Stat(StatName, max, value: initialValue);
 
             const int buff = 60;
 
@@ -38,7 +40,7 @@ namespace Strawhenge.Stats.Tests
         [Fact]
         public void Value_should_be_set_value_plus_buffs_when_changed_while_buffs_added()
         {
-            var stat = new Stat(max: 100, value: 50);
+            var stat = new Stat(StatName, max: 100, value: 50);
 
             const int value = 70;
             const int buff = 20;

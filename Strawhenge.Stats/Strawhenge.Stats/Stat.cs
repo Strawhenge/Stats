@@ -4,17 +4,20 @@ namespace Strawhenge.Stats
 {
     public class Stat
     {
-        public Stat()
+        public Stat(string name)
         {
+            Name = name;
         }
 
-        public Stat(int max, int value = 0)
+        public Stat(string name, int max, int value = 0) : this(name)
         {
             SexMax(max);
             Set(value);
         }
 
         public event Action Changed;
+
+        public string Name { get; }
 
         public int Max { get; private set; }
 
