@@ -75,7 +75,7 @@ namespace Strawhenge.Stats.Tests
         [InlineData(0, 200, 0)]
         [InlineData(200, 200, 100)]
         [InlineData(100, 200, 50)]
-        [InlineData(161, 200, 81)]
+        [InlineData(199, 200, 99)]
         [InlineData(0, 0, 0)]
         public void Value_should_have_percentage_of_max(int value, int max, int expectedPercentage)
         {

@@ -32,7 +32,7 @@ namespace Strawhenge.Stats
         public int BaseValue { get; private set; }
 
         public int Percentage =>
-            Max == 0 ? 0 : (int)Math.Round(Value * 100d / Max, MidpointRounding.AwayFromZero);
+            Max == 0 ? 0 : (int)Math.Floor(Value * 100d / Max);
 
         public int Buff { get; private set; }
 

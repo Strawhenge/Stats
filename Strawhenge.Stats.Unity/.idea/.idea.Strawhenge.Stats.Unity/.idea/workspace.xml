@@ -10,11 +10,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Package/Editor/StatsScriptEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/98ec7d8c54a645e58cad7347cf40764d1c00/cc/e3827058/Stat.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2hN3l4hAWi9DC3uajLjTdHa2IyX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -86,7 +93,7 @@
       <updated>1717420859142</updated>
       <workItem from="1717420863139" duration="135000" />
       <workItem from="1717421252976" duration="26000" />
-      <workItem from="1717421443470" duration="840000" />
+      <workItem from="1717421443470" duration="9883000" />
     </task>
     <servers />
   </component>
