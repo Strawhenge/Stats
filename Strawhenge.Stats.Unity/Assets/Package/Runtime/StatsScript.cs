@@ -1,4 +1,5 @@
 using FunctionalUtilities;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Strawhenge.Stats.Unity
@@ -12,6 +13,8 @@ namespace Strawhenge.Stats.Unity
         public Maybe<Stat> FindStat(string name) => StatContainer.FindStat(name);
 
         public bool IsReady { get; private set; }
+
+        public IReadOnlyList<Stat> Stats => StatContainer.Stats;
 
         void Start()
         {
