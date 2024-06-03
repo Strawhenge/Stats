@@ -22,6 +22,9 @@ namespace Strawhenge.Stats
 
         public int BaseValue { get; private set; }
 
+        public int Percentage =>
+            Max == 0 ? 0 : (int)Math.Round(Value * 100d / Max, MidpointRounding.AwayFromZero);
+
         public int Buff { get; private set; }
 
         public bool IsEmpty => Value == 0;

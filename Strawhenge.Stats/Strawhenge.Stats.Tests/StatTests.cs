@@ -68,5 +68,18 @@ namespace Strawhenge.Stats.Tests
             Assert.Equal(0, stat.Max);
             Assert.Equal(0, stat.Value);
         }
+
+        [Theory]
+        [InlineData(0, 200, 0)]
+        [InlineData(200, 200, 100)]
+        [InlineData(100, 200, 50)]
+        [InlineData(161, 200, 81)]
+        [InlineData(0, 0, 0)]
+        public void Value_should_have_percentage_of_max(int value, int max, int expectedPercentage)
+        {
+            var stat = new Stat(max, value);
+
+            Assert.Equal(expectedPercentage, stat.Percentage);
+        }
     }
 }
