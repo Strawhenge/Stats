@@ -11,7 +11,7 @@ namespace Strawhenge.Stats
 
         public Stat(string name, int max, int value = 0) : this(name)
         {
-            SexMax(max);
+            SetMax(max);
             Set(value);
         }
 
@@ -21,8 +21,14 @@ namespace Strawhenge.Stats
 
         public int Max { get; private set; }
 
+        /// <summary>
+        /// Value of this stat, including buffs.
+        /// </summary>
         public int Value => Math.Min(BaseValue + Buff, Max);
 
+        /// <summary>
+        /// Value of this stat, ignoring buffs.
+        /// </summary>
         public int BaseValue { get; private set; }
 
         public int Percentage =>
@@ -41,7 +47,7 @@ namespace Strawhenge.Stats
             Changed?.Invoke();
         }
 
-        public void SexMax(int max)
+        public void SetMax(int max)
         {
             Max = Math.Max(max, 0);
             BaseValue = Math.Min(Value, Max);

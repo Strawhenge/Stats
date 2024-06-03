@@ -9,9 +9,9 @@
             stat.Set(stat.BaseValue - amount);
 
         public static void IncreaseMax(this Stat stat, int amount) =>
-            stat.SexMax(stat.Max + amount);
+            stat.SetMax(stat.Max + amount);
 
         public static void DecreaseMax(this Stat stat, int amount) =>
-            stat.SexMax(stat.Max - amount);
+            stat.SetMax(stat.Max - amount);
     }
 }

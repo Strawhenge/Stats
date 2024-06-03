@@ -44,7 +44,7 @@ namespace Strawhenge.Stats.Tests
             const int value = 100;
             var stat = new Stat(StatName, max: 100, value);
 
-            stat.SexMax(150);
+            stat.SetMax(150);
             ;
             Assert.Equal(value, stat.Value);
         }
@@ -55,7 +55,7 @@ namespace Strawhenge.Stats.Tests
             var stat = new Stat(StatName, max: 100, value: 100);
 
             const int max = 90;
-            stat.SexMax(max);
+            stat.SetMax(max);
 
             Assert.Equal(max, stat.Value);
         }
@@ -65,7 +65,7 @@ namespace Strawhenge.Stats.Tests
         {
             var stat = new Stat(StatName, max: 100, value: 100);
 
-            stat.SexMax(-30);
+            stat.SetMax(-30);
 
             Assert.Equal(0, stat.Max);
             Assert.Equal(0, stat.Value);

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEditor;
@@ -85,8 +84,8 @@ namespace Strawhenge.Stats.Unity.Editor
 
             _setMax = EditorGUILayout.IntField(_setMax);
 
-            if (GUILayout.Button(nameof(Stat.SexMax)))
-                stat.SexMax(_setMax);
+            if (GUILayout.Button(nameof(Stat.SetMax)))
+                stat.SetMax(_setMax);
 
             EditorGUILayout.EndHorizontal();
         }
