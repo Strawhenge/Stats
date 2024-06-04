@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 
 namespace Strawhenge.Stats.Tests
 {
-    public class LoadStatsTests
+    public class ImportTests
     {
         const string HealthStat = "Health";
         const string EnergyStat = "Energy";
@@ -12,7 +12,7 @@ namespace Strawhenge.Stats.Tests
         readonly Stat _health;
         readonly Stat _energy;
 
-        public LoadStatsTests(ITestOutputHelper testOutputHelper)
+        public ImportTests(ITestOutputHelper testOutputHelper)
         {
             _stats = new StatContainer(
                 new TestOutputHelperLogger(testOutputHelper));
@@ -27,7 +27,7 @@ namespace Strawhenge.Stats.Tests
             const int healthValue = 75;
             const int energyValue = 100;
 
-            _stats.LoadValues(
+            _stats.Import(
                 new StatValueDto(HealthStat, healthValue),
                 new StatValueDto(EnergyStat, energyValue));
 

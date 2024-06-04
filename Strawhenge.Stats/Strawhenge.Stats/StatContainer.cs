@@ -39,7 +39,7 @@ namespace Strawhenge.Stats
             return stat;
         }
 
-        public void LoadValues(IEnumerable<StatValueDto> statValues)
+        public void Import(IEnumerable<StatValueDto> statValues)
         {
             foreach (var statValue in statValues)
             {
