@@ -8,13 +8,18 @@ namespace Strawhenge.Stats.Unity
     {
         [SerializeField] SerializedStat[] _stats;
 
-        public StatContainer StatContainer { private get; set; }
-
-        public Maybe<Stat> FindStat(string name) => StatContainer.FindStat(name);
-
         public bool IsReady { get; private set; }
 
-        public IReadOnlyList<Stat> Stats => StatContainer.Stats;
+        public StatContainer StatContainer { private get; set; }
+
+        public IReadOnlyList<Stat> Stats => 
+            StatContainer.Stats;
+
+        public Maybe<Stat> FindStat(string name) => 
+            StatContainer.FindStat(name);
+
+        public void LoadValues(IEnumerable<StatValueDto> statValues) => 
+            StatContainer.LoadValues(statValues);
 
         void Start()
         {

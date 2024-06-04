@@ -38,5 +38,19 @@ namespace Strawhenge.Stats
 
             return stat;
         }
+
+        public void LoadValues(IEnumerable<StatValueDto> statValues)
+        {
+            foreach (var statValue in statValues)
+            {
+                if (!_statsByName.TryGetValue(statValue.StatName, out var stat))
+                {
+                    _logger.LogError($"Stat '{statValue.StatName}' is missing.");
+                    continue;
+                }
+
+                stat.Set(statValue.Value);
+            }
+        }
     }
 }
