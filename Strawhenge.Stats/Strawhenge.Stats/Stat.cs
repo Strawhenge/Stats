@@ -47,10 +47,13 @@ namespace Strawhenge.Stats
             Changed?.Invoke();
         }
 
-        public void SetMax(int max)
+        public void SetMax(int max, bool maintainPercentage = false)
         {
+            if (maintainPercentage)
+                BaseValue = (int)Math.Round((double)BaseValue / Max * max);
+
             Max = Math.Max(max, 0);
-            BaseValue = Math.Min(Value, Max);
+            BaseValue = Math.Min(BaseValue, Max);
             Changed?.Invoke();
         }
 

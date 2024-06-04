@@ -5,7 +5,7 @@ namespace Strawhenge.Stats.Tests
     public class StatTests
     {
         const string StatName = "Health";
-        
+
         [Fact]
         public void Value_lower_than_max_should_be_able_to_be_set()
         {
@@ -82,6 +82,20 @@ namespace Strawhenge.Stats.Tests
             var stat = new Stat(StatName, max, value);
 
             Assert.Equal(expectedPercentage, stat.Percentage);
+        }
+
+        [Theory]
+        [InlineData(100, 100, 120, 120)]
+        [InlineData(100, 50, 120, 60)]
+        [InlineData(100, 50, 50, 25)]
+        public void Value_should_optionally_change_to_maintain_percentage_when_changing_max(
+            int initialMax, int initialValue, int newMax, int expectedNewValue)
+        {
+            var stat = new Stat(StatName, initialMax, initialValue);
+
+            stat.SetMax(newMax, maintainPercentage: true);
+
+            Assert.Equal(expectedNewValue, stat.Value);
         }
     }
 }
