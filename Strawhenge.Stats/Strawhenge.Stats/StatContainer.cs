@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using FunctionalUtilities;
 using Strawhenge.Common.Logging;
@@ -14,6 +15,8 @@ namespace Strawhenge.Stats
         {
             _logger = logger;
         }
+
+        public event Action<Stat> StatAdded;
 
         public IReadOnlyList<Stat> Stats => _statsByName.Values.ToArray();
 
@@ -36,6 +39,7 @@ namespace Strawhenge.Stats
             stat = new Stat(name, max, value);
             _statsByName.Add(name, stat);
 
+            StatAdded?.Invoke(stat);
             return stat;
         }
 
