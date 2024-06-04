@@ -8,10 +8,10 @@
         public static void Decrease(this Stat stat, int amount) =>
             stat.Set(stat.BaseValue - amount);
 
-        public static void IncreaseMax(this Stat stat, int amount) =>
-            stat.SetMax(stat.Max + amount);
+        public static void IncreaseMax(this Stat stat, int amount, bool maintainPercentage = false) =>
+            stat.SetMax(stat.Max + amount, maintainPercentage);
 
-        public static void DecreaseMax(this Stat stat, int amount) =>
-            stat.SetMax(stat.Max - amount);
+        public static void DecreaseMax(this Stat stat, int amount, bool maintainPercentage = false) =>
+            stat.SetMax(stat.Max - amount, maintainPercentage);
     }
 }
