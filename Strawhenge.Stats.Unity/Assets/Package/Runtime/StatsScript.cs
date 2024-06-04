@@ -12,14 +12,17 @@ namespace Strawhenge.Stats.Unity
 
         public StatContainer StatContainer { private get; set; }
 
-        public IReadOnlyList<Stat> Stats => 
+        public IReadOnlyList<Stat> Stats =>
             StatContainer.Stats;
 
-        public Maybe<Stat> FindStat(string name) => 
+        public Maybe<Stat> FindStat(string name) =>
             StatContainer.FindStat(name);
 
-        public void LoadValues(IEnumerable<StatValueDto> statValues) => 
-            StatContainer.LoadValues(statValues);
+        public void Import(IEnumerable<StatValueDto> statValues) =>
+            StatContainer.Import(statValues);
+
+        public IReadOnlyList<StatValueDto> Export() =>
+            StatContainer.Export();
 
         void Start()
         {
