@@ -1,4 +1,5 @@
 using FunctionalUtilities;
+using Strawhenge.Common.Unity.Serialization;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,8 @@ namespace Strawhenge.Stats.Unity
 {
     public class StatsScript : MonoBehaviour
     {
-        [SerializeField] SerializedStat[] _stats;
+        [SerializeField]
+        SerializedSource<IStatSetupGroup, SerializedStatSetupGroup, StatSetupGroupScriptableObject> _stats;
 
         public bool IsReady { get; private set; }
 
@@ -26,10 +28,10 @@ namespace Strawhenge.Stats.Unity
 
         void Start()
         {
-            foreach (var stat in _stats)
-            {
+            var stats = _stats.GetValue();
+
+            foreach (var stat in stats.All())
                 StatContainer.AddStat(stat.Name, stat.Max, stat.Value);
-            }
 
             IsReady = true;
         }

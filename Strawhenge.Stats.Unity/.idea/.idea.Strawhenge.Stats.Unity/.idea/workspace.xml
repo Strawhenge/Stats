@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6061a4-e68d-4091-ac73-95fa8f1cc327" name="Changes" comment="" />
+    <list default="true" id="9b6061a4-e68d-4091-ac73-95fa8f1cc327" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Strawhenge.Stats.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Strawhenge.Stats.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/SerializedStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/SerializedStatSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/SerializedStat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/SerializedStatSetup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/Strawhenge.Stats.Unity.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/Strawhenge.Stats.Unity.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Tests/InitializeStats/InitializeStats.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Tests/InitializeStats/InitializeStats.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Tests/StatsChangeOverTime/StatsChangeOverTime.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Tests/StatsChangeOverTime/StatsChangeOverTime.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +104,7 @@
       <workItem from="1717421443470" duration="9883000" />
       <workItem from="1717521705937" duration="167000" />
       <workItem from="1717528549847" duration="116000" />
+      <workItem from="1717535541390" duration="1416000" />
     </task>
     <servers />
   </component>

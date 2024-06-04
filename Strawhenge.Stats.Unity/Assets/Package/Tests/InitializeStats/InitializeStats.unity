@@ -332,12 +332,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats:
-  - _stat: {fileID: 11400000, guid: b398933089c183b4d8fbe194c292d38f, type: 2}
-    _max: 100
-    _value: 50
-  - _stat: {fileID: 11400000, guid: 8d0e3a72aba668944a5308f48136c920, type: 2}
-    _max: 100
-    _value: 100
+    _serialized:
+      _stats:
+      - _serialized:
+          _stat: {fileID: 11400000, guid: b398933089c183b4d8fbe194c292d38f, type: 2}
+          _max: 100
+          _value: 50
+        _scriptableObject: {fileID: 0}
+        _type: 1
+      - _serialized:
+          _stat: {fileID: 11400000, guid: 8d0e3a72aba668944a5308f48136c920, type: 2}
+          _max: 100
+          _value: 100
+        _scriptableObject: {fileID: 0}
+        _type: 1
+    _scriptableObject: {fileID: 0}
+    _type: 1
 --- !u!4 &2115202917
 Transform:
   m_ObjectHideFlags: 0

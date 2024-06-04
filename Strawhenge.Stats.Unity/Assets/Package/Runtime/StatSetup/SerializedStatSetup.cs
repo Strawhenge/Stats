@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Strawhenge.Stats.Unity
 {
     [Serializable]
-    public class SerializedStat
+    public class SerializedStatSetup : IStatSetup
     {
         [SerializeField] StatReferenceScriptableObject _stat;
         [SerializeField] int _max;
