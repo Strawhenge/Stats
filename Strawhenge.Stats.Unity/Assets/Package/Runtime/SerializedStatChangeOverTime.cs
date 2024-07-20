@@ -13,7 +13,7 @@ namespace Strawhenge.Stats.Unity
 
         [SerializeField] int _amount;
 
-        public string StatName => _stat.Name;
+        public StatReferenceScriptableObject Stat => _stat;
 
         public int Interval => _interval;
 

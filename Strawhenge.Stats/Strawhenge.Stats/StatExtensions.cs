@@ -2,6 +2,8 @@
 {
     public static class StatExtensions
     {
+        public static void FillToMax(this Stat stat) => stat.Set(stat.Max);
+        
         public static void Increase(this Stat stat, int amount) =>
             stat.Set(stat.BaseValue + amount);
 

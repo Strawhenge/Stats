@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6061a4-e68d-4091-ac73-95fa8f1cc327" name="Changes" comment="" />
+    <list default="true" id="9b6061a4-e68d-4091-ac73-95fa8f1cc327" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/SerializedStatChangeOverTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/SerializedStatChangeOverTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatsChangeOverTimeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatsChangeOverTimeScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Strawhenge.Stats/Strawhenge.Stats/StatExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Strawhenge.Stats/Strawhenge.Stats/StatExtensions.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +102,7 @@
       <workItem from="1717521705937" duration="167000" />
       <workItem from="1717528549847" duration="116000" />
       <workItem from="1717535541390" duration="1655000" />
+      <workItem from="1721512832582" duration="973000" />
     </task>
     <servers />
   </component>

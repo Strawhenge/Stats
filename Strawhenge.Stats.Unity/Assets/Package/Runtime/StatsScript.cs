@@ -14,11 +14,19 @@ namespace Strawhenge.Stats.Unity
 
         public StatContainer StatContainer { private get; set; }
 
-        public IReadOnlyList<Stat> Stats =>
-            StatContainer.Stats;
+        public IReadOnlyList<Stat> Stats => StatContainer.Stats;
+
+        public void FillToMax(StatReferenceScriptableObject stat) =>
+            StatContainer.FindStat(stat).Do(x => x.FillToMax());
+
+        public void Set(StatReferenceScriptableObject stat, int value) =>
+            StatContainer.FindStat(stat).Do(x => x.Set(value));
 
         public Maybe<Stat> FindStat(string name) =>
             StatContainer.FindStat(name);
+
+        public Maybe<Stat> FindStat(StatReferenceScriptableObject stat) =>
+            StatContainer.FindStat(stat);
 
         public void Import(IEnumerable<StatValueDto> statValues) =>
             StatContainer.Import(statValues);
