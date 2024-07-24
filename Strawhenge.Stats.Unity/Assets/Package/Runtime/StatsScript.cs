@@ -17,16 +17,16 @@ namespace Strawhenge.Stats.Unity
         public IReadOnlyList<Stat> Stats => StatContainer.Stats;
 
         public void FillToMax(StatReferenceScriptableObject stat) =>
-            StatContainer.FindStat(stat).Do(x => x.FillToMax());
+            StatContainer.GetStat(stat).FillToMax();
 
         public void Set(StatReferenceScriptableObject stat, int value) =>
-            StatContainer.FindStat(stat).Do(x => x.Set(value));
+            StatContainer.GetStat(stat).Set(value);
 
-        public Maybe<Stat> FindStat(string name) =>
-            StatContainer.FindStat(name);
+        public Stat GetStat(string name) =>
+            StatContainer.GetStat(name);
 
-        public Maybe<Stat> FindStat(StatReferenceScriptableObject stat) =>
-            StatContainer.FindStat(stat);
+        public Stat GetStat(StatReferenceScriptableObject stat) =>
+            StatContainer.GetStat(stat);
 
         public void Import(IEnumerable<StatValueDto> statValues) =>
             StatContainer.Import(statValues);
@@ -38,8 +38,12 @@ namespace Strawhenge.Stats.Unity
         {
             var stats = _stats.GetValue();
 
-            foreach (var stat in stats.All())
-                StatContainer.AddStat(stat.Name, stat.Max, stat.Value);
+            foreach (var statSetup in stats.All())
+            {
+                var stat = StatContainer.GetStat(statSetup.Name);
+                stat.SetMax(statSetup.Max);
+                stat.Set(statSetup.Value);
+            }
 
             IsReady = true;
         }

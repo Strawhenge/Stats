@@ -17,8 +17,11 @@ namespace Strawhenge.Stats.Tests
             _stats = new StatContainer(
                 new TestOutputHelperLogger(testOutputHelper));
 
-            _health = _stats.AddStat(HealthStat, 100);
-            _energy = _stats.AddStat(EnergyStat, 100);
+            _health = _stats.GetStat(HealthStat);
+            _health.SetMax(100);
+
+            _energy = _stats.GetStat(EnergyStat);
+            _energy.SetMax(100);
         }
 
         [Fact]

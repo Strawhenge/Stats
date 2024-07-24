@@ -25,12 +25,7 @@ namespace Strawhenge.Stats.Unity
 
                 foreach (var change in _changes)
                 {
-                    if (!_stats.FindStat(change.Stat).HasSome(out var stat))
-                    {
-                        Debug.LogError($"Stat '{change.Stat}' not found.", this);
-                        continue;
-                    }
-
+                    var stat = _stats.GetStat(change.Stat);
                     ChangeOverTime(stat, change.Interval, change.Amount);
                 }
             }

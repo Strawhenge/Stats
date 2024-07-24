@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FunctionalUtilities;
 using Strawhenge.Common.Logging;
 
 namespace Strawhenge.Stats
@@ -20,41 +19,18 @@ namespace Strawhenge.Stats
 
         public IReadOnlyList<Stat> Stats => _statsByName.Values.ToArray();
 
-        public Maybe<Stat> FindStat(string name)
+        public Stat GetStat(string name)
         {
             if (_statsByName.TryGetValue(name, out var stat))
                 return stat;
 
-            return Maybe.None<Stat>();
-        }
+            _logger.LogInformation($"Adding stat '{name}'");
 
-        public Stat AddStat(string name, int max, int value = 0)
-        {
-            if (_statsByName.TryGetValue(name, out var stat))
-            {
-                _logger.LogError($"Stat '{name}' already exists.");
-                return stat;
-            }
-
-            stat = new Stat(name, max, value);
+            stat = new Stat(name);
             _statsByName.Add(name, stat);
 
             StatAdded?.Invoke(stat);
             return stat;
-        }
-
-        public void Import(IEnumerable<StatValueDto> statValues)
-        {
-            foreach (var statValue in statValues)
-            {
-                if (!_statsByName.TryGetValue(statValue.StatName, out var stat))
-                {
-                    _logger.LogError($"Stat '{statValue.StatName}' is missing.");
-                    continue;
-                }
-
-                stat.Set(statValue.Value);
-            }
         }
     }
 }
