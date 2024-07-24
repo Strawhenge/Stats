@@ -15,6 +15,9 @@ namespace Strawhenge.Stats.Unity.Tests
 
             var stats = GetComponent<StatsScript>();
             stats.StatContainer = StatContainer;
+
+            if (TryGetComponent<StatsChangeOverTimeScript>(out var changeOverTime))
+                changeOverTime.Stats = StatContainer;
         }
     }
 }

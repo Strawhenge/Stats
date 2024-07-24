@@ -5,29 +5,16 @@ namespace Strawhenge.Stats.Unity
 {
     public class StatsChangeOverTimeScript : MonoBehaviour
     {
-        [SerializeField] StatsScript _stats;
         [SerializeField] SerializedStatChangeOverTime[] _changes;
+
+        public StatContainer Stats { private get; set; }
 
         void OnEnable()
         {
-            if (_stats == null)
+            foreach (var change in _changes)
             {
-                Debug.LogError($"{nameof(StatsScript)} not set.", this);
-                enabled = false;
-                return;
-            }
-
-            StartCoroutine(BeginCoroutine());
-
-            IEnumerator BeginCoroutine()
-            {
-                yield return new WaitUntil(() => _stats.IsReady);
-
-                foreach (var change in _changes)
-                {
-                    var stat = _stats.GetStat(change.Stat);
-                    ChangeOverTime(stat, change.Interval, change.Amount);
-                }
+                var stat = Stats.GetStat(change.Stat);
+                ChangeOverTime(stat, change.Interval, change.Amount);
             }
         }
 
