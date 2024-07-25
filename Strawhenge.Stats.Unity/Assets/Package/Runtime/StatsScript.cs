@@ -1,4 +1,3 @@
-using FunctionalUtilities;
 using Strawhenge.Common.Unity.Serialization;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,9 +39,9 @@ namespace Strawhenge.Stats.Unity
 
             foreach (var statSetup in stats.All())
             {
-                var stat = StatContainer.GetStat(statSetup.Name);
-                stat.SetMax(statSetup.Max);
-                stat.Set(statSetup.Value);
+                StatContainer
+                    .GetStat(statSetup.Name)
+                    .SetMaxAndValue(statSetup.Max, statSetup.Value);
             }
 
             IsReady = true;

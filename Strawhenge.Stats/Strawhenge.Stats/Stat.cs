@@ -57,6 +57,12 @@ namespace Strawhenge.Stats
             Changed?.Invoke();
         }
 
+        public void SetMaxAndValue(int max, int value)
+        {
+            BaseValue = Math.Max(value, 0);
+            SetMax(max);
+        }
+
         public void AddBuff(int buff)
         {
             Buff += buff;
