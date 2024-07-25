@@ -9,7 +9,7 @@ namespace Strawhenge.Stats.Unity
 
         public StatContainer Stats { private get; set; }
 
-        void OnEnable()
+        void Start()
         {
             foreach (var change in _changes)
             {
