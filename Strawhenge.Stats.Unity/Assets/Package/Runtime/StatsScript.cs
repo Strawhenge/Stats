@@ -15,17 +15,17 @@ namespace Strawhenge.Stats.Unity
 
         public IReadOnlyList<Stat> Stats => StatContainer.Stats;
 
-        public void FillToMax(StatReferenceScriptableObject stat) =>
-            StatContainer.GetStat(stat).FillToMax();
-
-        public void Set(StatReferenceScriptableObject stat, int value) =>
-            StatContainer.GetStat(stat).Set(value);
-
-        public Stat GetStat(string name) =>
-            StatContainer.GetStat(name);
-
         public Stat GetStat(StatReferenceScriptableObject stat) =>
             StatContainer.GetStat(stat);
+
+        public void Set(SetStatScriptableObject setStat) =>
+            StatContainer.GetStat(setStat.Stat).Set(setStat.Value);
+
+        public void Increase(IncreaseStatScriptableObject increaseStat) =>
+            StatContainer.GetStat(increaseStat.Stat).Increase(increaseStat.Amount);
+
+        public void FillToMax(StatReferenceScriptableObject stat) =>
+            StatContainer.GetStat(stat).FillToMax();
 
         public void Import(IEnumerable<StatValueDto> statValues) =>
             StatContainer.Import(statValues);

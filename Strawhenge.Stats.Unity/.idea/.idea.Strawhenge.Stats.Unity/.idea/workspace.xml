@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6061a4-e68d-4091-ac73-95fa8f1cc327" name="Changes" comment="" />
+    <list default="true" id="9b6061a4-e68d-4091-ac73-95fa8f1cc327" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,8 +14,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Package/Editor/StatsScriptEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Package/Runtime/IncreaseStatScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84ec5a047d7c4ecaa28db10b0b7a5e752200/26/34f3f970/StatContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/98ec7d8c54a645e58cad7347cf40764d1c00/cc/e3827058/Stat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bd82114ffb4645ceb3d763e87dde6ac22200/32/6100d788/Stat.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
