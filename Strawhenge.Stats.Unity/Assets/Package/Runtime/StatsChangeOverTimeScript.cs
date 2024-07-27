@@ -24,7 +24,7 @@ namespace Strawhenge.Stats.Unity
 
             IEnumerator ChangeOverTimeCoroutine()
             {
-                while (true)
+                while (enabled)
                 {
                     yield return new WaitForSeconds(interval);
                     stat.Increase(amount);
