@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Strawhenge.Stats.Unity
@@ -7,17 +8,16 @@ namespace Strawhenge.Stats.Unity
     {
         [SerializeField] Text _nameText;
         [SerializeField] Text _valueText;
+        [SerializeField] StatsScript _player;
         [SerializeField] StatReferenceScriptableObject _statReference;
 
         Stat _stat;
-        
-        public StatContainer Stats { private get; set; }
-        
+
         void Start()
         {
-            _stat = Stats.GetStat(_statReference);
+            _stat = _player.GetStat(_statReference);
             _nameText.text = _stat.Name;
-            
+
             _stat.Changed += OnChanged;
             OnChanged();
         }
