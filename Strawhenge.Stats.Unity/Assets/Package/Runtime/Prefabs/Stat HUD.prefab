@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3620614724892176208
 CanvasRenderer:
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameText: {fileID: 3620614725596136019}
   _valueText: {fileID: 3620614725348334497}
+  _player: {fileID: 0}
   _statReference: {fileID: 0}
 --- !u!1 &3620614725348334503
 GameObject:
@@ -129,8 +130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.22471619, y: -15.241}
-  m_SizeDelta: {x: -1.35, y: -29.518}
+  m_AnchoredPosition: {x: 0.22471619, y: -60.240997}
+  m_SizeDelta: {x: -1.35, y: -119.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3620614725348334496
 CanvasRenderer:
@@ -162,11 +163,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 112
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 112
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -209,8 +210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00030517578, y: -15}
-  m_SizeDelta: {x: -0.9, y: 30}
+  m_AnchoredPosition: {x: -0.00030517578, y: -60}
+  m_SizeDelta: {x: -0.9, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3620614725596136018
 CanvasRenderer:
@@ -242,11 +243,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 5
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
