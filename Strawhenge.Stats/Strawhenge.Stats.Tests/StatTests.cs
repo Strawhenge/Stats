@@ -45,7 +45,7 @@ namespace Strawhenge.Stats.Tests
             var stat = new Stat(StatName, max: 100, value);
 
             stat.SetMax(150);
-            ;
+            
             Assert.Equal(value, stat.Value);
         }
 
