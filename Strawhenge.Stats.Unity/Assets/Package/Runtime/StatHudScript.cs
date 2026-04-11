@@ -12,9 +12,9 @@ namespace Strawhenge.Stats.Unity
 
         Stat _stat;
 
-        void Start()
+        void Awake()
         {
-            _stat = _player.GetStat(_statReference);
+            _stat = _player.StatContainer.GetStat(_statReference);
             _nameText.text = _stat.Name;
 
             _stat.Changed += OnChanged;

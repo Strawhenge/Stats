@@ -1,3 +1,4 @@
+using Strawhenge.Common.Unity;
 using Strawhenge.Common.Unity.Serialization;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,42 +10,34 @@ namespace Strawhenge.Stats.Unity
         [SerializeField]
         SerializedSource<IStatSetupGroup, SerializedStatSetupGroup, StatSetupGroupScriptableObject> _stats;
 
-        public bool IsReady { get; private set; }
+        [SerializeField] LoggerScript _logger;
 
-        public StatContainer StatContainer { private get; set; }
+        StatContainer _statContainer;
 
-        public IReadOnlyList<Stat> Stats => StatContainer.Stats;
+        public StatContainer StatContainer => _statContainer ??= Create();
 
-        public Stat GetStat(StatReferenceScriptableObject stat) =>
-            StatContainer.GetStat(stat);
-
-        public void Set(SetStatScriptableObject setStat) =>
-            StatContainer.GetStat(setStat.Stat).Set(setStat.Value);
-
-        public void Increase(IncreaseStatScriptableObject increaseStat) =>
-            StatContainer.GetStat(increaseStat.Stat).Increase(increaseStat.Amount);
-
-        public void FillToMax(StatReferenceScriptableObject stat) =>
-            StatContainer.GetStat(stat).FillToMax();
-
-        public void Import(IEnumerable<StatValueDto> statValues) =>
-            StatContainer.Import(statValues);
-
-        public IReadOnlyList<StatValueDto> Export() =>
-            StatContainer.Export();
-
-        void Start()
+        void Awake()
         {
-            var stats = _stats.GetValue();
+            _statContainer ??= Create();
+        }
 
-            foreach (var statSetup in stats.All())
-            {
-                StatContainer
-                    .GetStat(statSetup.Name)
-                    .SetMaxAndValue(statSetup.Max, statSetup.Value);
-            }
+        StatContainer Create()
+        {
+            var logger = _logger != null
+                ? _logger.Logger
+                : new UnityLogger(gameObject);
 
-            IsReady = true;
+            var statContainer = new StatContainer(logger);
+
+            if (_stats.TryGetValue(out var stats))
+                foreach (var statSetup in stats.All())
+                {
+                    statContainer
+                        .GetStat(statSetup.Name)
+                        .SetMaxAndValue(statSetup.Max, statSetup.Value);
+                }
+
+            return statContainer;
         }
     }
 }
