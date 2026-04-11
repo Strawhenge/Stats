@@ -23,7 +23,7 @@ namespace Strawhenge.Stats.Unity.Editor
 
         public override void OnInspectorGUI()
         {
-            if (_target.IsReady)
+            if (Application.isPlaying)
                 InspectStats(_target.Stats);
 
             base.OnInspectorGUI();

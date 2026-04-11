@@ -1,3 +1,4 @@
+using Strawhenge.Common.Unity.Helpers;
 using System.Collections;
 using UnityEngine;
 
@@ -5,15 +6,16 @@ namespace Strawhenge.Stats.Unity
 {
     public class StatsChangeOverTimeScript : MonoBehaviour
     {
+        [SerializeField] StatsScript _stats;
         [SerializeField] SerializedStatChangeOverTime[] _changes;
 
-        public StatContainer Stats { private get; set; }
-
-        void Start()
+        void Awake()
         {
+            ComponentRefHelper.EnsureRootHierarchyComponent(ref _stats, nameof(_stats), this);
+
             foreach (var change in _changes)
             {
-                var stat = Stats.GetStat(change.Stat);
+                var stat = _stats.GetStat(change.Stat);
                 ChangeOverTime(stat, change.Interval, change.Amount);
             }
         }
