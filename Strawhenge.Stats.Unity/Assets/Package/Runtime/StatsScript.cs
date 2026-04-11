@@ -52,7 +52,7 @@ namespace Strawhenge.Stats.Unity
             if (_stats.TryGetValue(out var stats))
                 foreach (var statSetup in stats.All())
                 {
-                    StatContainer
+                    statContainer
                         .GetStat(statSetup.Name)
                         .SetMaxAndValue(statSetup.Max, statSetup.Value);
                 }
