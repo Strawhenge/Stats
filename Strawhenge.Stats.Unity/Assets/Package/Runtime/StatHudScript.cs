@@ -12,7 +12,7 @@ namespace Strawhenge.Stats.Unity
 
         Stat _stat;
 
-        void Start()
+        void Awake()
         {
             _stat = _player.GetStat(_statReference);
             _nameText.text = _stat.Name;
