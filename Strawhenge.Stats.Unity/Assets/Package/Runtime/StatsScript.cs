@@ -16,26 +16,6 @@ namespace Strawhenge.Stats.Unity
 
         public StatContainer StatContainer => _statContainer ??= Create();
 
-        public IReadOnlyList<Stat> Stats => StatContainer.Stats;
-
-        public Stat GetStat(StatReferenceScriptableObject stat) =>
-            StatContainer.GetStat(stat);
-
-        public void Set(SetStatScriptableObject setStat) =>
-            StatContainer.GetStat(setStat.Stat).Set(setStat.Value);
-
-        public void Increase(IncreaseStatScriptableObject increaseStat) =>
-            StatContainer.GetStat(increaseStat.Stat).Increase(increaseStat.Amount);
-
-        public void FillToMax(StatReferenceScriptableObject stat) =>
-            StatContainer.GetStat(stat).FillToMax();
-
-        public void Import(IEnumerable<StatValueDto> statValues) =>
-            StatContainer.Import(statValues);
-
-        public IReadOnlyList<StatValueDto> Export() =>
-            StatContainer.Export();
-
         void Awake()
         {
             _statContainer ??= Create();

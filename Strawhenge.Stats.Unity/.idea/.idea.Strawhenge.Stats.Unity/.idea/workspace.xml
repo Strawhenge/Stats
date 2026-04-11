@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="876a7e6d-73aa-4a96-97ce-0f58fccba837" name="Changes" comment="" />
+    <list default="true" id="876a7e6d-73aa-4a96-97ce-0f58fccba837" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Editor/StatsScriptEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Editor/StatsScriptEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/ChangeOverTime/StatsChangeOverTimeScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/ChangeOverTime/StatsChangeOverTimeScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatHudScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatHudScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1722973942007</updated>
       <workItem from="1722973944374" duration="107000" />
-      <workItem from="1775936022794" duration="1116000" />
+      <workItem from="1775936022794" duration="1447000" />
     </task>
     <servers />
   </component>

@@ -15,7 +15,7 @@ namespace Strawhenge.Stats.Unity
 
             foreach (var change in _changes)
             {
-                var stat = _stats.GetStat(change.Stat);
+                var stat = _stats.StatContainer.GetStat(change.Stat);
                 ChangeOverTime(stat, change.Interval, change.Amount);
             }
         }
