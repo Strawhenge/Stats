@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="876a7e6d-73aa-4a96-97ce-0f58fccba837" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Strawhenge.Stats.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Strawhenge.Stats.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Runtime/StatsScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/Tests/TestContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Tests/TestContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-    </list>
+    <list default="true" id="876a7e6d-73aa-4a96-97ce-0f58fccba837" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +31,7 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Package/Tests/InitializeStats/InitializeStats.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.strawhenge.common@1db85e1458/Runtime/Logging/LoggerScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7283cfe09c454befa9beb6a59f40be142200/63/a4a2bd2e/StatContainer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -125,7 +121,7 @@
       <option name="presentableId" value="Default" />
       <updated>1722973942007</updated>
       <workItem from="1722973944374" duration="107000" />
-      <workItem from="1775936022794" duration="743000" />
+      <workItem from="1775936022794" duration="1116000" />
     </task>
     <servers />
   </component>
