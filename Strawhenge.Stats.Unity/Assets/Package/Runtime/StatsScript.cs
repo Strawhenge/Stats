@@ -1,3 +1,4 @@
+using Strawhenge.Common.Unity;
 using Strawhenge.Common.Unity.Serialization;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,11 @@ namespace Strawhenge.Stats.Unity
         [SerializeField]
         SerializedSource<IStatSetupGroup, SerializedStatSetupGroup, StatSetupGroupScriptableObject> _stats;
 
-        public bool IsReady { get; private set; }
+        [SerializeField] LoggerScript _logger;
 
-        public StatContainer StatContainer { private get; set; }
+        StatContainer _statContainer;
+
+        public StatContainer StatContainer => _statContainer ??= Create();
 
         public IReadOnlyList<Stat> Stats => StatContainer.Stats;
 
@@ -33,18 +36,28 @@ namespace Strawhenge.Stats.Unity
         public IReadOnlyList<StatValueDto> Export() =>
             StatContainer.Export();
 
-        void Start()
+        void Awake()
         {
-            var stats = _stats.GetValue();
+            _statContainer ??= Create();
+        }
 
-            foreach (var statSetup in stats.All())
-            {
-                StatContainer
-                    .GetStat(statSetup.Name)
-                    .SetMaxAndValue(statSetup.Max, statSetup.Value);
-            }
+        StatContainer Create()
+        {
+            var logger = _logger != null
+                ? _logger.Logger
+                : new UnityLogger(gameObject);
 
-            IsReady = true;
+            var statContainer = new StatContainer(logger);
+
+            if (_stats.TryGetValue(out var stats))
+                foreach (var statSetup in stats.All())
+                {
+                    StatContainer
+                        .GetStat(statSetup.Name)
+                        .SetMaxAndValue(statSetup.Max, statSetup.Value);
+                }
+
+            return statContainer;
         }
     }
 }

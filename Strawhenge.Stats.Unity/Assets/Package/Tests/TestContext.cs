@@ -9,12 +9,8 @@ namespace Strawhenge.Stats.Unity.Tests
 
         void Awake()
         {
-            var logger = new UnityLogger(gameObject);
-
-            StatContainer = new StatContainer(logger);
-
             var stats = GetComponent<StatsScript>();
-            stats.StatContainer = StatContainer;
+            StatContainer = stats.StatContainer;
 
             if (TryGetComponent<StatsChangeOverTimeScript>(out var changeOverTime))
                 changeOverTime.Stats = StatContainer;
